@@ -271,8 +271,9 @@ function renderProducts() {
       loading="lazy"
   >
 </a>
-${product.availableOn.includes("SourceXChange")
-          ? `
+${
+  product.availableOn.includes("SourceXChange")
+    ? `
   <a href="${product.href.SourceXChange}" class="block w-full h-full">
       <img
           src="${product.image}"
@@ -282,8 +283,8 @@ ${product.availableOn.includes("SourceXChange")
       >
   </a>
 `
-          : ""
-        }
+    : ""
+}
 <span class="absolute top-2 right-2 bg-black/75 text-white px-2 py-1 rounded text-xs font-medium backdrop-blur-sm">
   ${product.version}
 </span>
@@ -292,11 +293,13 @@ ${product.availableOn.includes("SourceXChange")
     
     <div class="flex flex-col flex-1 p-6 gap-4">
         <div>
-            <span class="text-sm text-gray-400 mb-1 block">${product.category
-        }</span>
+            <span class="text-sm text-gray-400 mb-1 block">${
+              product.category
+            }</span>
             <h3 class="text-xl font-semibold leading-tight">
-                <a href="${product.href.BuiltByBit
-        }" class="hover:text-gray-300 transition-colors">
+                <a href="${
+                  product.href.BuiltByBit
+                }" class="hover:text-gray-300 transition-colors">
                     ${product.title}
                 </a>
             </h3>
@@ -308,20 +311,20 @@ ${product.availableOn.includes("SourceXChange")
         
         <div class="flex flex-wrap gap-2">
             ${product.tags
-          .map(
-            (tag) => `
+              .map(
+                (tag) => `
                 <span class="px-3 py-1 bg-accent rounded text-xs text-gray-300">
                     ${tag}
                 </span>
             `
-          )
-          .join("")}
+              )
+              .join("")}
         </div>
         
         <div class="flex items-center justify-between mt-auto pt-4 border-t border-zinc-800">
             <div class="text-xl font-semibold">${formatPrice(
-            product.price
-          )}</div>
+              product.price
+            )}</div>
             <div class="flex gap-2">
 <a 
   href="${product.href.BuiltByBit}" 
@@ -334,8 +337,9 @@ ${product.availableOn.includes("SourceXChange")
       class="w-8 h-8 rounded"
   >
 </a>
-${product.availableOn.includes("SourceXChange")
-          ? `
+${
+  product.availableOn.includes("SourceXChange")
+    ? `
   <a 
       href="${product.href.SourceXChange}" 
       class="p-2 bg-accent rounded hover:bg-accent-hover transition-colors"
@@ -348,8 +352,8 @@ ${product.availableOn.includes("SourceXChange")
       >
   </a>
 `
-          : ""
-        }
+    : ""
+}
 </div>
         </div>
     </div>
